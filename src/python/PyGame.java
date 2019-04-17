@@ -59,14 +59,34 @@ public class PyGame {
 		this.end = new Object();
 
 		// 起動情報を本体にセットする
-		LaunchSetting.deviceTypes[0] = InputManager.DEVICE_TYPE_AI;
-		LaunchSetting.deviceTypes[1] = InputManager.DEVICE_TYPE_AI;
-		LaunchSetting.characterNames[0] = c1;
-		LaunchSetting.characterNames[1] = c2;
-		LaunchSetting.aiNames[0] = name1;
-		LaunchSetting.aiNames[1] = name2;
-		LaunchSetting.repeatNumber = num;
-
+		 if(name1.equals("KeyBoard") || name2.equals("KeyBoard")) {
+			if(name1.equals("KeyBoard")) {
+				LaunchSetting.deviceTypes[0] = InputManager.DEVICE_TYPE_KEYBOARD;
+				LaunchSetting.deviceTypes[1] = InputManager.DEVICE_TYPE_AI;
+				LaunchSetting.characterNames[0] = c1;
+				LaunchSetting.characterNames[1] = c2;
+				LaunchSetting.aiNames[0] = name1;
+				LaunchSetting.aiNames[1] = name2;
+				LaunchSetting.repeatNumber = num;
+			} else if(name2.equals("KeyBoard")) {
+				LaunchSetting.deviceTypes[0] = InputManager.DEVICE_TYPE_AI;
+				LaunchSetting.deviceTypes[1] = InputManager.DEVICE_TYPE_KEYBOARD;
+				LaunchSetting.characterNames[0] = c1;
+				LaunchSetting.characterNames[1] = c2;
+				LaunchSetting.aiNames[0] = name1;
+				LaunchSetting.aiNames[1] = name2;
+				LaunchSetting.repeatNumber = num;
+			}
+		} else {
+			LaunchSetting.deviceTypes[0] = InputManager.DEVICE_TYPE_AI;
+			LaunchSetting.deviceTypes[1] = InputManager.DEVICE_TYPE_AI;
+			LaunchSetting.characterNames[0] = c1;
+			LaunchSetting.characterNames[1] = c2;
+			LaunchSetting.aiNames[0] = name1;
+			LaunchSetting.aiNames[1] = name2;
+			LaunchSetting.repeatNumber = num;
+		}
+		 
 		if (LaunchSetting.repeatNumber > 1) {
 			FlagSetting.automationFlag = true;
 		}
