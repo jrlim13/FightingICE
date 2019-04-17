@@ -78,6 +78,7 @@ public class PyGame {
 				LaunchSetting.repeatNumber = num;
 			}
 		} else {
+			// For KeyBoard
 			LaunchSetting.deviceTypes[0] = InputManager.DEVICE_TYPE_AI;
 			LaunchSetting.deviceTypes[1] = InputManager.DEVICE_TYPE_AI;
 			LaunchSetting.characterNames[0] = c1;
